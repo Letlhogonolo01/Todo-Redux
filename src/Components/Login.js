@@ -10,7 +10,7 @@ const Login = () => {
 
   useEffect(() => {
     sessionStorage.clear();
-  });
+  }, []);
 
   const ProceedLogin = (e) => {
     e.preventDefault();
@@ -58,11 +58,11 @@ const Login = () => {
     <div className="TodoWrapper1">
       <div className="offset-lg-1 col-lg-10">
         <form onSubmit={ProceedLogin} className="container">
-          <div >
+          <div>
             <div className="card-header">
               <h2>User Login</h2>
             </div>
-            <br/>
+            <br />
             <div className="card-body">
               <div className="form-group">
                 <label>
@@ -74,7 +74,7 @@ const Login = () => {
                   className="form-control"
                 ></input>
               </div>
-              <br/>
+              <br />
               <div className="form-group">
                 <label>
                   Password <span className="errmsg">*</span>
@@ -87,7 +87,7 @@ const Login = () => {
                 ></input>
               </div>
             </div>
-            <br/>
+            <br />
             <div className="card-footer">
               <button type="submit" className="btn btn-primary">
                 {" "}

@@ -1,0 +1,12 @@
+{
+  "user": [
+    {
+      "id": "Adminuser",
+      "name": "John Smith",
+      "email": "john@gmail.com",
+      "password": "admin",
+      "gender": "male",
+      "todo": []
+    }
+  ]
+}

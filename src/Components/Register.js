@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Register = () => {
@@ -7,7 +7,7 @@ const Register = () => {
   const [name, namechange] = useState("");
   const [email, emailchange] = useState("");
   const [password, passwordchange] = useState("");
-  const [gender, genderchange] = useState("male");
+  const [gender, genderchange] = useState("");
 
   const navigate = useNavigate();
 
@@ -30,7 +30,7 @@ const Register = () => {
       isproceed = false;
       errormessage += " Password";
     }
-    
+
     if (!isproceed) {
       toast.warning(errormessage);
     } else {
@@ -39,13 +39,13 @@ const Register = () => {
         isproceed = false;
         toast.warning("Please enter valid email");
       }
-    } 
+    }
     return isproceed;
   };
 
   const handlesubmit = (e) => {
     e.preventDefault();
-    let list = []
+    let list = [];
     let regobj = { id, name, email, password, gender, list };
     if (IsValidate()) {
       // console.log(regobj);
@@ -54,10 +54,12 @@ const Register = () => {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(regobj),
-      }).then((res) => {
+      })
+        .then((res) => {
           toast.success("Registered successfully.");
           navigate("/login");
-        }).catch((err) => {
+        })
+        .catch((err) => {
           toast.err("Failed :" + err.message);
         });
     }
@@ -67,11 +69,11 @@ const Register = () => {
     <div className="TodoWrapper1">
       <div className="offset-lg-1 col-lg-10">
         <form className="container" onSubmit={handlesubmit}>
-          <div >
+          <div>
             <div className="card-header">
               <h2>User Registration</h2>
             </div>
-            <br/>
+            <br />
             <div className="card-body">
               <div className="row">
                 <div className="col-lg-12">
@@ -87,7 +89,7 @@ const Register = () => {
                   </div>
                 </div>
               </div>
-              <br/>
+              <br />
               <div className="row">
                 <div className="col-lg-12">
                   <div className="form-group">
@@ -102,7 +104,7 @@ const Register = () => {
                   </div>
                 </div>
               </div>
-              <br/>
+              <br />
               <div className="row">
                 <div className="col-lg-12">
                   <div className="form-group">
@@ -117,7 +119,7 @@ const Register = () => {
                   </div>
                 </div>
               </div>
-              <br/>
+              <br />
               <div className="row">
                 <div className="col-lg-12">
                   <div className="form-group">
@@ -133,8 +135,8 @@ const Register = () => {
                   </div>
                 </div>
               </div>
-              <br/>
-              <div className="col-lg-6">
+              <br />
+              <div className="col-lg-12">
                 <div className="form-group">
                   <label>Gender</label>
                   <br></br>
@@ -159,12 +161,13 @@ const Register = () => {
                 </div>
               </div>
             </div>
-            <br/>
+            <br />
             <div className="card-footer">
               <button type="submit" className="btn btn-primary">
                 Register
               </button>{" "}
-              |<Link className="btn btn-danger" to={"/login"}>
+              |
+              <Link className="btn btn-danger" to={"/login"}>
                 {" "}
                 Back
               </Link>
