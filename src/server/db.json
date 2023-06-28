@@ -7,6 +7,14 @@
       "password": "admin",
       "gender": "male",
       "todo": []
+    },
+    {
+      "id": "tester",
+      "name": "Wendy Books",
+      "email": "wendny@gmail.com",
+      "password": "1q2w",
+      "gender": "female",
+      "list": []
     }
   ]
 }

@@ -27,7 +27,7 @@ const TodoList = () => {
     <div className="Link">
      <Link to={'/'}>Home</Link> |
      <Link to={'/login'}>Logout</Link>
-      <Container>
+      <br/>|
         <Modal show={show} onHide={() => setShow(false)}>
           <Modal.Header closeButton>
             <Modal.Title>Remove todo?</Modal.Title>
@@ -67,7 +67,7 @@ const TodoList = () => {
               ))}
           </tbody>
         </Table>
-      </Container>
+      
     </div>
    );
 }
